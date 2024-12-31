@@ -1,0 +1,52 @@
+{
+  "cSpell.words": [
+    "Attributify",
+    "commitlint",
+    "conventionalcommits",
+    "infile",
+    "miniprogram",
+    "mjsx",
+    "mtsx",
+    "plusplus",
+    "Prefixs",
+    "tseslint"
+  ],
+  "GitCommitPlugin.ShowEmoji": true, // 提交是否显示 emoji 符号
+  "GitCommitPlugin.MaxSubjectCharacters": 20, // 提交 Subject 最大字符数
+  // 增加自定义类型，可以配置多个
+  "GitCommitPlugin.CustomCommitType": [ // 自定义提交类型
+    // {
+    //   "key": "wip", 
+    //   "label": "wip",
+    //   "detail": "正在开发中",
+    //   "icon":"🔓️ ",
+    // },
+    // {
+    //   "key": "workflow", 
+    //   "label": "workflow",
+    //   "detail": "工作流程改进",
+    //   "icon":"⏳️ ",
+    // },
+    // {
+    //   "key": "types", 
+    //   "label": "types",
+    //   "detail": "类型定义文件修改",
+    //   "icon":"🚙 ",
+    // },
+  ],
+  "GitCommitPlugin.Templates": [ // 自定义提交模板
+    // {
+    //   "templateName": "git-uni-lin",
+    //   "templateContent": "<icon><scope><type>(<scope>):<subject>",
+    //   "default":true // 是否覆盖默认模板
+    // }
+  ],
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts, $(capture).test.tsx",
+    "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
+    // "*.env": "$(capture).env.*",
+    "CHANGELOG.md": "CHANGELOG*",
+    "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,.npmrc,.browserslistrc",
+    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*,.eslintrc-auto-import.json,.editorconfig,.commitlint.config.mjs"
+  }
+}
