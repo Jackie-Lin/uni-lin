@@ -1,24 +1,6 @@
 {
   "plugins": {
     "@release-it/conventional-changelog": {
-      "preset": {
-        "name": "conventionalcommits",
-        "types": [
-          { "type": "init", "section": "🎉 Initialization | 初始化项目", "emoji": "🎉" },
-          { "type": "feat", "section": "✨ Features | 新功能", "emoji": "✨" },
-          { "type": "fix", "section": "🐛 Bug Fixes | Bug 修复", "emoji": "🐛" },
-          { "type": "docs", "section": "📝 Documentation | 文档", "emoji": "📝" },
-          { "type": "style", "section": "💄 Styles | 风格", "emoji": "💄" },
-          { "type": "refactor", "section": "♻ Code Refactoring | 代码重构", "emoji": "♻" },
-          { "type": "perf", "section": "⚡ Performance Improvements | 性能优化", "emoji": "⚡" },
-          { "type": "test", "section": "✅ Tests | 测试", "emoji": "✅" },
-          { "type": "build", "section": "👷‍ Build System | 构建", "emoji": "👷‍" },
-          { "type": "ci", "section": "🔧 Continuous Integration | CI 配置", "emoji": "🔧" },
-          { "type": "chore", "section": "🎫 Chores | 其他更新", "emoji": "🎫" },
-          { "type": "config", "section": "🔨 CONFIG | 配置", "emoji": "🔨" },
-          { "type": "revert", "section": "⏪ Reverts | 回退", "emoji": "⏪" }
-        ]
-      },
       "emoji": true,
       "emojiPosition": "before",
       "infile": "CHANGELOG.md",

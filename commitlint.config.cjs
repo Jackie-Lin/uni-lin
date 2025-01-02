@@ -29,8 +29,8 @@ module.exports = {
     // customScopesAlign: !scopeComplete ? 'top' : 'bottom', //  如果 scope 不完整，则将 customScopesAlign 设置为 top，否则设置为 bottom
     // defaultScope: scopeComplete, //  如果 scope 完整，则将 defaultScope 设置为 true，否则设置为 false
     // scopes: [...scopes, 'mock'],
-    // allowEmptyIssuePrefixs: false, //  不允许空 issue 前缀
-    // allowCustomIssuePrefixs: false, //  不允许自定义 issue 前缀
+    allowEmptyIssuePrefixs: false, //  不允许空 issue 前缀
+    allowCustomIssuePrefixs: false, //  不允许自定义 issue 前缀
     // emptyScopesAlias: 'empty: 不填写',
     // customScopesAlias: 'custom: 自定义',
     skipQuestions: ['scope', 'body', 'breaking', 'footer'], // 跳过 body、breaking、footer 三个问题
@@ -39,14 +39,14 @@ module.exports = {
 
     messages: {
       type: '选择你要提交的类型 :',
-      scope: '选择一个提交范围 (可选):',
-      customScope: '请输入自定义的提交范围 :',
+      // scope: '选择一个提交范围 (可选):',
+      // customScope: '请输入自定义的提交范围 :',
       subject: '填写简短精炼的变更描述 :\n',
-      body: '填写更加详细的变更描述 (可选)。使用 "|" 换行 :\n',
-      breaking: '列举非兼容性重大的变更 (可选)。使用 "|" 换行 :\n',
-      footerPrefixsSelect: '选择关联issue前缀 (可选):',
-      customFooterPrefixs: '输入自定义issue前缀 :',
-      footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
+      // body: '填写更加详细的变更描述 (可选)。使用 "|" 换行 :\n',
+      // breaking: '列举非兼容性重大的变更 (可选)。使用 "|" 换行 :\n',
+      // footerPrefixsSelect: '选择关联issue前缀 (可选):',
+      // customFooterPrefixs: '输入自定义issue前缀 :',
+      // footer: '列举关联issue (可选) 例如: #31, #I3244 :\n',
       confirmCommit: '是否提交或修改commit ?'
     },
 
