@@ -1,23 +1,21 @@
-/* eslint-disable */
+// const fs = require('fs')
+// const path = require('path')
+// const { execSync } = require('child_process')
 
-const fs = require('fs')
-const path = require('path')
-const { execSync } = require('child_process')
+// const scopes = fs
+//   .readdirSync(path.resolve(__dirname, 'src'), { withFileTypes: true })
+//   .filter(dirent => dirent.isDirectory())
+//   .map(dirent => dirent.name.replace(/s$/, ''))
 
-const scopes = fs
-  .readdirSync(path.resolve(__dirname, 'src'), { withFileTypes: true })
-  .filter(dirent => dirent.isDirectory())
-  .map(dirent => dirent.name.replace(/s$/, ''))
-
-// precomputed scope
-const scopeComplete = execSync('git status --porcelain || true')
-  .toString()
-  .trim()
-  .split('\n')
-  .find(r => ~r.indexOf('M  src'))
-  ?.replace(/(\/)/g, '%%')
-  ?.match(/src%%((\w|-)*)/)?.[1]
-  ?.replace(/s$/, '')
+// // precomputed scope
+// const scopeComplete = execSync('git status --porcelain || true')
+//   .toString()
+//   .trim()
+//   .split('\n')
+//   .find(r => ~r.indexOf('M  src'))
+//   ?.replace(/(\/)/g, '%%')
+//   ?.match(/src%%((\w|-)*)/)?.[1]
+//   ?.replace(/s$/, '')
 
 module.exports = {
   userEmoji: true,
@@ -28,13 +26,13 @@ module.exports = {
   },
   prompt: {
     /** @use `pnpm commit :f` */
-    customScopesAlign: !scopeComplete ? 'top' : 'bottom', //  如果 scope 不完整，则将 customScopesAlign 设置为 top，否则设置为 bottom
-    defaultScope: scopeComplete, //  如果 scope 完整，则将 defaultScope 设置为 true，否则设置为 false
-    scopes: [...scopes, 'mock'],
-    allowEmptyIssuePrefixs: false, //  不允许空 issue 前缀
-    allowCustomIssuePrefixs: false, //  不允许自定义 issue 前缀
-    emptyScopesAlias: 'empty: 不填写',
-    customScopesAlias: 'custom: 自定义',
+    // customScopesAlign: !scopeComplete ? 'top' : 'bottom', //  如果 scope 不完整，则将 customScopesAlign 设置为 top，否则设置为 bottom
+    // defaultScope: scopeComplete, //  如果 scope 完整，则将 defaultScope 设置为 true，否则设置为 false
+    // scopes: [...scopes, 'mock'],
+    // allowEmptyIssuePrefixs: false, //  不允许空 issue 前缀
+    // allowCustomIssuePrefixs: false, //  不允许自定义 issue 前缀
+    // emptyScopesAlias: 'empty: 不填写',
+    // customScopesAlias: 'custom: 自定义',
     skipQuestions: ['scope', 'body', 'breaking', 'footer'], // 跳过 body、breaking、footer 三个问题
     userEmoji: true,
     emojiAlign: 'left',
@@ -83,10 +81,10 @@ module.exports = {
       { value: 'build', name: '🔧 build: 构建流程、外部依赖变更 (如升级 npm 包、修改打包配置等)', emoji: '🔧' },
       { value: 'ci', name: '🐎 ci: 修改 CI 配置，例如对k8s、docker的配置文件的修改', emoji: '🐎' },
       { value: 'chore', name: '🐳 chore: 对构建过程或辅助工具和库的更改 (不影响源文件、测试用例)', emoji: '🐳' },
-      // { value: 'wip', name: '🔓️ wip: 正在开发中', emoji: '🔓️' },
-      // { value: 'workflow', name: '⏳️ workflow: 工作流程改进', emoji: '⏳️' },
-      // { value: 'types', name: '🚙 types: 类型定义文件修改', emoji: '🚙' },
-      // { value: 'versions', name: '🔖 versions: 类型定义文件修改', emoji: '🔖' },
+      { value: 'wip', name: '🔓️ wip: 正在开发中', emoji: '🔓️' },
+      { value: 'workflow', name: '⏳️ workflow: 工作流程改进', emoji: '⏳️' },
+      { value: 'types', name: '🚙 types: 类型定义文件修改', emoji: '🚙' },
+      { value: 'versions', name: '🔖 versions: 类型定义文件修改', emoji: '🔖' },
       { value: 'revert', name: '↩ revert: 回滚 commit', emoji: '↩' }
     ]
   }

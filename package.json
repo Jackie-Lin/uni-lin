@@ -43,7 +43,7 @@
       "prettier --write"
     ],
     "**/*.{vue,js,ts,jsx,tsx,mjs,cjs}": [
-      "eslint --cache --fix"
+      "eslint --fix"
     ],
     "**/*.{vue,css,scss,html}": [
       "stylelint --fix"
