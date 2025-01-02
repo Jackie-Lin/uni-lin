@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.0.11](https://gitee.com/FOM/uni-lin/compare/0.0.10...0.0.11) (2025-01-02)
+
 ## [0.0.10](https://gitee.com/FOM/uni-lin/compare/0.0.1...0.0.10) (2025-01-02)
 
 ## [0.0.9](https://gitee.com/FOM/uni-lin/compare/0.0.1...0.0.9) (2025-01-02)
