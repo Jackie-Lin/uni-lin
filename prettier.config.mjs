@@ -22,7 +22,9 @@ const config = {
   // 单个参数的箭头函数不加括号 x => x
   arrowParens: 'avoid',
   // 对象大括号内两边是否加空格 { a:0 }
-  bracketSpacing: true
+  bracketSpacing: true,
+  // 忽略html中的空格
+  htmlWhitespaceSensitivity: 'ignore'
 }
 
 export default config

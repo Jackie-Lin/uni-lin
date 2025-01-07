@@ -10,10 +10,6 @@ import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
-  // ignores 提升为全局忽略项
-  {
-    ignores: ['src/uni_modules/', 'src/static/', '.vscode', '.husky']
-  },
   // 全局 files 指定 ESlint 匹配的文件
   {
     files: ['**/*.{js,mjs,jsx,mjsx,ts,tsx,mtsx,vue}']
@@ -52,8 +48,14 @@ const config = [
       // 禁止变量重新声明，与 @typescript-eslint 重复提示了，关闭它
       'no-redeclare': 'off',
       // 关闭 import-x 的 no-unresolved
-      'import-x/no-unresolved': 'off'
+      'import-x/no-unresolved': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-require-imports': 'off'
     }
+  },
+  // ignores 提升为全局忽略项
+  {
+    ignores: ['src/uni_modules/', 'src/static/', '.vscode', '.husky']
   }
 ]
 

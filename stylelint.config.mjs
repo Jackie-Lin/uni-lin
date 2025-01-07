@@ -3,9 +3,9 @@
 /** @type {import('stylelint').Config} */
 const config = {
   extends: [
-    'stylelint-config-standard',
-    'stylelint-config-standard-scss',
-    'stylelint-config-standard-vue/scss',
+    'stylelint-config-recommended',
+    'stylelint-config-recommended-scss',
+    'stylelint-config-recommended-vue',
     'stylelint-config-recess-order'
   ],
   overrides: [
