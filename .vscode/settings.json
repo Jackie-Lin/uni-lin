@@ -6,12 +6,14 @@
     "conventionalcommits",
     "echart",
     "infile",
+    "Logined",
     "miniprogram",
     "mjsx",
     "mtsx",
     "plusplus",
     "Prefixs",
-    "tseslint"
+    "tseslint",
+    "VITE"
   ],
   "GitCommitPlugin.ShowEmoji": true, // 提交是否显示 emoji 符号
   "GitCommitPlugin.MaxSubjectCharacters": 20, // 提交 Subject 最大字符数
@@ -43,12 +45,15 @@
     //   "default":true // 是否覆盖默认模板
     // }
   ],
+  "explorer.fileNesting.enabled": true, // 开启文件嵌套
+  "explorer.fileNesting.expand": false, // 默认折叠
   "explorer.fileNesting.patterns": {
     "*.ts": "$(capture).test.ts, $(capture).test.tsx",
     "*.tsx": "$(capture).test.ts, $(capture).test.tsx",
     // "*.env": "$(capture).env.*",
     "CHANGELOG.md": "CHANGELOG*",
     "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,.npmrc,.browserslistrc",
-    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*,.eslintrc-auto-import.json,.editorconfig,.commitlint.config.mjs"
+    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*,.eslintrc-auto-import.json,.editorconfig,.commitlint.config.mjs",
+    ".env": ".env.*",
   }
 }

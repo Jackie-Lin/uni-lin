@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
+import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
   plugins: [
@@ -11,6 +12,13 @@ export default defineConfig({
       // pages 目录为 src/pages，分包目录不能配置在pages目录下
       subPackages: ['src/pages-sub'], // 是个数组，可以配置多个，但是不能为pages里面的目录
       dts: 'src/types/uni-pages.d.ts' // 生成的类型文件，默认是 src/types/uni-pages.d.ts
+    }),
+    AutoImport({
+      imports: ['vue', 'uni-app'],
+      dts: 'src/types/auto-import.d.ts',
+      dirs: ['src/hooks'], // 自动导入 hooks
+      eslintrc: { enabled: true },
+      vueTemplate: true // default false
     }),
     uni()
   ]

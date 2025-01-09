@@ -8,6 +8,11 @@ import eslintPluginImportX from 'eslint-plugin-import-x'
 // import tsParser from '@typescript-eslint/parser'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 
+import { readFile } from 'node:fs/promises'
+
+const autoImportFile = new URL('./.eslintrc-auto-import.json', import.meta.url)
+const autoImportGlobals = JSON.parse(await readFile(autoImportFile, 'utf8'))
+
 /** @type {import('eslint').Linter.Config[]} */
 const config = [
   // 全局 files 指定 ESlint 匹配的文件
@@ -56,6 +61,13 @@ const config = [
   // ignores 提升为全局忽略项
   {
     ignores: ['src/uni_modules/', 'src/static/', '.vscode', '.husky']
+  },
+  {
+    languageOptions: {
+      globals: {
+        ...autoImportGlobals.globals
+      }
+    }
   }
 ]
 

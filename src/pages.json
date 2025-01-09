@@ -1,8 +1,18 @@
 {
 	"pages": [
 		{
-			"path": "pages/echartsShow/index",
+			"path": "pages/piniaDome/index",
 			"type": "home",
+			"style": {
+				"navigationBarTitleText": "pinia 使用 dome",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/echartsShow/index",
+			"type": "page",
 			"style": {
 				"navigationBarTitleText": "图表 dome",
 				"navigationBarTextStyle": "black",
@@ -13,6 +23,16 @@
 		{
 			"path": "pages/index/index",
 			"type": "page"
+		},
+		{
+			"path": "pages/queryDome/index",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "请求使用模板",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
 		}
 	],
 	"subPackages": []

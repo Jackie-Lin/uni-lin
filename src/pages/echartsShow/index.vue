@@ -2,7 +2,7 @@
 @description: Echarts 图表 dome
 -->
 
-<route type="home" lang="json">
+<route type="page" lang="json">
 {
   "style": {
     "navigationBarTitleText": "图表 dome",
