@@ -1,10 +1,10 @@
 {
 	"pages": [
 		{
-			"path": "pages/piniaDome/index",
+			"path": "pages/queryDemo/loginDemo",
 			"type": "home",
 			"style": {
-				"navigationBarTitleText": "pinia 使用 dome",
+				"navigationBarTitleText": "登录请求示例",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"
@@ -25,15 +25,47 @@
 			"type": "page"
 		},
 		{
-			"path": "pages/queryDome/index",
+			"path": "pages/piniaDemo/index",
 			"type": "page",
 			"style": {
-				"navigationBarTitleText": "请求使用模板",
+				"navigationBarTitleText": "pinia 使用 dome",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/queryDemo/useRequestDemo",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "useRequest使用示例",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/queryDemo/zPagingDemo",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "z-paging 使用示例",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"
 			}
 		}
 	],
+	"globalStyle": {
+		"navigationBarBackgroundColor": "#ffffff",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "index"
+	},
+	"easycom": {
+		"autoscan": true,
+		"custom": {
+			"^wd-(.*)": "wot-design-uni/components/wd-$1/wd-$1.vue",
+			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
+		}
+	},
 	"subPackages": []
 }

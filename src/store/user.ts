@@ -5,7 +5,7 @@ type UserInfo = {
   userName?: string
   userId?: string
   avatar?: string
-  token?: string
+  accessToken?: string
   refreshToken?: string
 }
 
@@ -14,7 +14,7 @@ const initState = {
   userName: 'uni-lin',
   userId: '',
   avatar: '',
-  token: '',
+  accessToken: '',
   refreshToken: ''
   // ...
 }

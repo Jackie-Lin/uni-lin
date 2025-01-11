@@ -60,7 +60,8 @@ const config = [
       // 关闭 import-x 的 no-unresolved
       'import-x/no-unresolved': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/no-require-imports': 'off'
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off'
     }
   },
   // ignores 提升为全局忽略项

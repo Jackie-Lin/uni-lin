@@ -1,13 +1,5 @@
-type IResData<T> = {
-  code: number
-  msg: string
+type ResData<T> = {
   data: T
-}
-
-type IUniUploadFileOptions = {
-  file?: File
-  files?: UniApp.UploadFileOptionFiles[]
-  filePath?: string
-  name?: string
-  formData?: any
+  code: number
+  message: string
 }

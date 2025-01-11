@@ -1,4 +1,4 @@
-import { useEcharts } from '@/hooks/echartsHook'
+import { useEcharts } from '@/hooks/useEcharts'
 import { ref } from 'vue'
 
 // 折线图

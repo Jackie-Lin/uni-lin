@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -21,5 +22,11 @@ export default defineConfig({
       vueTemplate: true // default false
     }),
     uni()
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@': path.join(process.cwd(), './src'),
+      '@img': path.join(process.cwd(), './src/static')
+    }
+  }
 })

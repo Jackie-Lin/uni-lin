@@ -2,7 +2,7 @@
 @description: pinia 使用 dome
 -->
 
-<route type="home" lang="json">
+<route type="page" lang="json">
 {
   "style": {
     "navigationBarTitleText": "pinia 使用 dome",

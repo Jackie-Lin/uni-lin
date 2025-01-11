@@ -5,7 +5,7 @@ const echarts = require('../uni_modules/lime-echart/static/echarts.min')
 
 import { ref } from 'vue'
 
-// echarts 图表 Hook
+// echarts 图表 Hooks
 export const useEcharts = (options): any => {
   // echarts 图实例
   const chartRef = ref(null)

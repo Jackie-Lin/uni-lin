@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useBarEcharts, useLineEcharts } from './echarts-data'
+import { useBarEcharts, useLineEcharts } from './echartsData'
 import { set } from 'lodash-es'
 const [lineChartRef, lineOption, lineDraw] = useLineEcharts()
 const [lineChartRef2, lineOption2, lineDraw2] = useLineEcharts()

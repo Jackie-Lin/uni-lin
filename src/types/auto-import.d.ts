@@ -78,9 +78,10 @@ declare global {
   const useAttrs: (typeof import('vue'))['useAttrs']
   const useCssModule: (typeof import('vue'))['useCssModule']
   const useCssVars: (typeof import('vue'))['useCssVars']
-  const useEcharts: (typeof import('../hooks/echartsHook'))['useEcharts']
+  const useEcharts: (typeof import('../hooks/useEcharts'))['useEcharts']
   const useId: (typeof import('vue'))['useId']
   const useModel: (typeof import('vue'))['useModel']
+  const useRequest: (typeof import('../hooks/useRequest'))['default']
   const useSlots: (typeof import('vue'))['useSlots']
   const useTemplateRef: (typeof import('vue'))['useTemplateRef']
   const watch: (typeof import('vue'))['watch']
@@ -195,9 +196,10 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<(typeof import('vue'))['useAttrs']>
     readonly useCssModule: UnwrapRef<(typeof import('vue'))['useCssModule']>
     readonly useCssVars: UnwrapRef<(typeof import('vue'))['useCssVars']>
-    readonly useEcharts: UnwrapRef<(typeof import('../hooks/echartsHook'))['useEcharts']>
+    readonly useEcharts: UnwrapRef<(typeof import('../hooks/useEcharts'))['useEcharts']>
     readonly useId: UnwrapRef<(typeof import('vue'))['useId']>
     readonly useModel: UnwrapRef<(typeof import('vue'))['useModel']>
+    readonly useRequest: UnwrapRef<(typeof import('../hooks/useRequest'))['default']>
     readonly useSlots: UnwrapRef<(typeof import('vue'))['useSlots']>
     readonly useTemplateRef: UnwrapRef<(typeof import('vue'))['useTemplateRef']>
     readonly watch: UnwrapRef<(typeof import('vue'))['watch']>
