@@ -5,7 +5,6 @@ export type CustomRequestOptions = UniApp.RequestOptions & {
   query?: Record<string, any>
   /** 出错时是否隐藏错误提示 */
   hideErrorToast?: boolean
-  isBaseUrl?: boolean
 }
 
 const timeout = 30000 // 请求超时时间
@@ -16,7 +15,12 @@ const httpInterceptor = {
   // 请求前的拦截
   invoke(options: CustomRequestOptions) {
     // 1. 设置请求路径
-    options.url = (options.isBaseUrl === false ? '' : baseUrl) + options.url
+    if (!options.url.includes('//')) {
+      // 非完整路径，补全基础路径
+      // 完整路径：http://localhost:8080/api/user/login
+      // 非完整路径：api/user/loginApi
+      options.url = baseUrl + options.url
+    }
     // 2. query 参数处理
     if (options.query) {
       // qs.stringify() 方法将一个 JavaScript 对象或数组转换为一个查询字符串

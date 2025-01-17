@@ -32,7 +32,7 @@ import useRequest from '@/hooks/useRequest'
 const page = ref(1)
 const { loading, error, data, run } = useRequest({
   queryKey: [page],
-  queryFn: () => getUserListApi({ _page: page.value, _limit: 10 }, { isBaseUrl: false }),
+  queryFn: () => getUserListApi({ _page: page.value, _limit: 10 }),
   options: { immediate: true }
 })
 

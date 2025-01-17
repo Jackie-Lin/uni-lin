@@ -20,7 +20,7 @@ import { loginApi, getListApi } from '@/api/loginApi'
 // 登录请求
 const login = () => {
   loginApi({
-    username: 'guang',
+    username: 'uniLin',
     password: '111111'
   })
 }

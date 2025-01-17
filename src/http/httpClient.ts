@@ -14,11 +14,16 @@ export default class ApiClient {
       requestTask = uni.request({
         ...options,
         success: async (res: any) => {
-          // 无感刷新token
+          /* -------- 请求成功 ----------- */
+          if ((res.statusCode >= 200 && res.statusCode < 300) || res.data.code === 0) {
+            return resolve(res.data as ResData<T>)
+          }
+
+          /* -------- 无感刷新 token ----------- */
           const store = useUserStore()
           const { refreshToken } = store.userInfo || {}
           // token 失效的，且有刷新 token 的，才放到请求队列里
-          if (res.data.code == 401 || (res.statusCode == 401 && refreshToken != '')) {
+          if ((res.data.code == 401 || res.statusCode == 401) && refreshToken != '') {
             taskQueue.push(() => {
               this.http(options)
             })
@@ -51,8 +56,12 @@ export default class ApiClient {
             taskQueue = []
           }
 
-          // 请求成功
-          resolve(res.data as ResData<T>)
+          /* -------- 剩余情况都默认请求异常 ----------- */
+          uni.showToast({
+            title: res.data.msg || res.data.message || '请求异常',
+            icon: 'none'
+          })
+          reject(res)
         },
         fail: err => {
           if (err.errMsg === 'request:fail abort') {
@@ -68,6 +77,7 @@ export default class ApiClient {
       then: promise.then.bind(promise),
       catch: promise.catch.bind(promise),
       finally: promise.finally.bind(promise),
+      [Symbol.iterator]: promise[Symbol.iterator],
       abort: () => {
         // 取消请求
         requestTask.abort()

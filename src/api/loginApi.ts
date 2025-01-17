@@ -4,8 +4,7 @@ import { useUserStore } from '@/store'
 /* 登录 获取 accessToken */
 export const loginApi = async data => {
   const res: any = await http.post('http://localhost:3000/login', {
-    data,
-    isBaseUrl: false
+    data
   })
   const store = useUserStore()
   store.setUserInfo({
@@ -22,8 +21,7 @@ export const refreshTokenApi = async () => {
   const res: any = await http.get('http://localhost:3000/refresh', {
     data: {
       refreshToken: refreshToken
-    },
-    isBaseUrl: false
+    }
   })
   store.setUserInfo({
     refreshToken: res.data.refreshToken,
@@ -34,7 +32,5 @@ export const refreshTokenApi = async () => {
 
 /* 获取用户信息 */
 export const getListApi = async () => {
-  return http.get('http://localhost:3000/list', {
-    isBaseUrl: false
-  })
+  return http.get('http://localhost:3000/userInfo')
 }
