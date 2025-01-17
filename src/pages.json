@@ -1,10 +1,10 @@
 {
 	"pages": [
 		{
-			"path": "pages/queryDemo/loginDemo",
+			"path": "pages/queryDemo/queryTestDemo",
 			"type": "home",
 			"style": {
-				"navigationBarTitleText": "登录请求示例",
+				"navigationBarTitleText": "请求测试页面",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"
@@ -29,6 +29,16 @@
 			"type": "page",
 			"style": {
 				"navigationBarTitleText": "pinia 使用 dome",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/queryDemo/loginDemo",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "登录请求示例",
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"

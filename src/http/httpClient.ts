@@ -4,19 +4,21 @@ import { useUserStore } from '@/store'
 
 type CustomRequestOptionsOmit = Omit<CustomRequestOptions, 'url' | 'method'>
 
-let refreshing = false
-let taskQueue = []
+let refreshing = false // 防止重复刷新 token 标示
+let taskQueue = [] // 刷新 token 请求队列
 
 export default class ApiClient {
   private static http<T>(options: Omit<CustomRequestOptions, 'isBaseUrl'>) {
-    return new Promise<ResData<T>>((resolve, reject) => {
-      uni.request({
+    let requestTask
+    const promise = new Promise<ResData<T>>((resolve, reject) => {
+      requestTask = uni.request({
         ...options,
         success: async (res: any) => {
           // 无感刷新token
           const store = useUserStore()
           const { refreshToken } = store.userInfo || {}
-          if (res.data.code == 401 || res.statusCode == 401) {
+          // token 失效的，且有刷新 token 的，才放到请求队列里
+          if (res.data.code == 401 || (res.statusCode == 401 && refreshToken != '')) {
             taskQueue.push(() => {
               this.http(options)
             })
@@ -25,14 +27,12 @@ export default class ApiClient {
             refreshing = true
             // 发起刷新 token 请求
             const refreshTokenRes: any = await refreshTokenApi()
-            console.log('🚀 ~ ApiClient ~ success: ~ refreshTokenRes:', refreshTokenRes)
             refreshing = false
             // 刷新 token 成功，将任务队列的所有任务重新请求
             if (refreshTokenRes?.data.code == 200) {
               taskQueue.forEach(event => {
                 event()
               })
-              taskQueue = []
             } else {
               // 刷新 token 失败，跳转到登录页
               uni.showToast({
@@ -47,16 +47,32 @@ export default class ApiClient {
               //   uni.navigateTo({ url: '/pages/login/login' })
               // }, 2500)
             }
+            // 不管刷新 token 成功与否，都清空任务队列
+            taskQueue = []
           }
 
           // 请求成功
           resolve(res.data as ResData<T>)
         },
         fail: err => {
-          reject(err)
+          if (err.errMsg === 'request:fail abort') {
+            console.log(`请求 ${options.url} 被取消`)
+          } else {
+            reject(err)
+          }
         }
       })
     })
+    return {
+      ...promise, // 补全 Promise 的类型
+      then: promise.then.bind(promise),
+      catch: promise.catch.bind(promise),
+      finally: promise.finally.bind(promise),
+      cancel: () => {
+        // 取消请求
+        requestTask.abort()
+      }
+    }
   }
   // GET
   public static get(url: string, options?: CustomRequestOptionsOmit) {

@@ -27,16 +27,16 @@ const httpInterceptor = {
     // 3. 请求超时时间设置
     options.timeout = timeout
     // 4. 定义请求返回数据的格式（设为 json，会尝试对返回的数据做一次 JSON.parse）
-    ;(options.dataType = 'json'),
-      // #ifndef MP-WEIXIN
-      (options.responseType = 'json'),
-      // #endif
-      // 5. 添加请求头标识，可以告诉后台是小程序端发起的请求
-      (options.header = {
-        ...options.header,
-        'Content-Type': 'application/json; charset=utf-8'
-        // platform: 'mini-program', 比如 platform 字段可以告诉后台是小程序端发起的请求
-      })
+    options.dataType = 'json'
+    // #ifndef MP-WEIXIN
+    options.responseType = 'json'
+    // #endif
+    // 5. 添加请求头标识，可以告诉后台是小程序端发起的请求
+    options.header = {
+      ...options.header,
+      'Content-Type': 'application/json; charset=utf-8'
+      // platform: 'mini-program', 比如 platform 字段可以告诉后台是小程序端发起的请求
+    }
     // 6. 添加 token 请求头标识
     const store = useUserStore()
     const { accessToken } = store.userInfo || {}

@@ -1,4 +1,4 @@
-<route type="home" lang="json">
+<route type="page" lang="json">
 {
   "style": {
     "navigationBarTitleText": "登录请求示例",
