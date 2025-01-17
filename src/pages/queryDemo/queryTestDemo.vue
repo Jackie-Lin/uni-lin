@@ -35,8 +35,6 @@ const postTest = async () => {
 // 取消 请求
 const cancelRequest = () => {
   // 取消请求
-  requestTask.cancel()
+  requestTask.abort()
 }
 </script>
-
-<style scoped lang="scss"></style>

@@ -68,7 +68,7 @@ export default class ApiClient {
       then: promise.then.bind(promise),
       catch: promise.catch.bind(promise),
       finally: promise.finally.bind(promise),
-      cancel: () => {
+      abort: () => {
         // 取消请求
         requestTask.abort()
       }
