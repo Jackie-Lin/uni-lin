@@ -1,1 +1,2 @@
-export { requestInterceptor } from './requestInterceptor' // 请求拦截器
+export { requestInterceptor } from './request'
+export { routerInterceptor } from './router'

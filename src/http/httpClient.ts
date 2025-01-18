@@ -1,5 +1,5 @@
 import { refreshTokenApi } from '@/api/loginApi'
-import { CustomRequestOptions } from '@/interceptors/requestInterceptor'
+import { CustomRequestOptions } from '@/interceptors/request'
 import { useUserStore } from '@/store'
 
 type CustomRequestOptionsOmit = Omit<CustomRequestOptions, 'url' | 'method'>

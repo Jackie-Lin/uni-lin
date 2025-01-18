@@ -1,13 +1,10 @@
 {
 	"pages": [
 		{
-			"path": "pages/queryDemo/queryTestDemo",
+			"path": "pages/routerDemo/index",
 			"type": "home",
 			"style": {
-				"navigationBarTitleText": "请求测试页面",
-				"navigationBarTextStyle": "black",
-				"navigationBarBackgroundColor": "#ffffff",
-				"backgroundColor": "#ffffff"
+				"navigationBarTitleText": "页面路由权限控制"
 			}
 		},
 		{
@@ -45,6 +42,16 @@
 			}
 		},
 		{
+			"path": "pages/queryDemo/queryTestDemo",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "请求测试页面",
+				"navigationBarTextStyle": "black",
+				"navigationBarBackgroundColor": "#ffffff",
+				"backgroundColor": "#ffffff"
+			}
+		},
+		{
 			"path": "pages/queryDemo/useRequestDemo",
 			"type": "page",
 			"style": {
@@ -63,6 +70,44 @@
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"
 			}
+		},
+		{
+			"path": "pages/routerDemo/login",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "登录页"
+			}
+		},
+		{
+			"path": "pages/routerDemo/page1",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "页面1"
+			},
+			"permissionKeys": [
+				"vip"
+			]
+		},
+		{
+			"path": "pages/routerDemo/page2",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "页面2"
+			},
+			"permissionKeys": [
+				"vip",
+				"admin"
+			]
+		},
+		{
+			"path": "pages/routerDemo/page3",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "页面3"
+			},
+			"permissionKeys": [
+				"logined"
+			]
 		}
 	],
 	"globalStyle": {
@@ -77,5 +122,18 @@
 			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue"
 		}
 	},
-	"subPackages": []
+	"subPackages": [
+		{
+			"root": "pages-sub",
+			"pages": [
+				{
+					"path": "subDemo/index",
+					"type": "page",
+					"style": {
+						"navigationBarTitleText": "subDemo 分包页面"
+					}
+				}
+			]
+		}
+	]
 }

@@ -26,7 +26,17 @@ const config = [
       globals: {
         ...globals.browser, // 浏览器环境
         ...globals.node, // node 环境
-        ...autoImportGlobals.globals // 自动导入配置
+        ...autoImportGlobals.globals, // 自动导入配置
+        $t: true,
+        uni: true,
+        UniApp: true,
+        wx: true,
+        WechatMiniprogram: true,
+        getCurrentPages: true,
+        UniHelper: true,
+        Page: true,
+        App: true,
+        NodeJS: true
       },
       // parser: tsParser,
       ecmaVersion: 'latest',

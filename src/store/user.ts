@@ -7,6 +7,7 @@ type UserInfo = {
   avatar?: string
   accessToken?: string
   refreshToken?: string
+  isVip?: boolean
 }
 
 // 初始用户数据，可用户初始化
@@ -15,7 +16,8 @@ const initState = {
   userId: '',
   avatar: '',
   accessToken: '',
-  refreshToken: ''
+  refreshToken: '',
+  isVip: true
   // ...
 }
 
@@ -35,10 +37,26 @@ export const useUserStore = defineStore(
       userInfo.value = { ...initState }
     }
 
+    // 获取权限信息
+    const getUserPermissionKeys = computed(() => {
+      const permissionKeys: string[] = []
+      // 是登录
+      if (!!userInfo.value.accessToken && !!userInfo.value.refreshToken) {
+        permissionKeys.push('logined')
+      }
+      // 是否为 vip
+      if (userInfo.value.isVip) {
+        permissionKeys.push('vip')
+      }
+      // 可以继续加你需要的权限判定 ...
+      return permissionKeys
+    })
+
     return {
       userInfo,
       setUserInfo,
-      clearUserInfo
+      clearUserInfo,
+      getUserPermissionKeys
     }
   },
   {
