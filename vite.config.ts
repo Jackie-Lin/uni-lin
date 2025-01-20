@@ -3,9 +3,13 @@ import path from 'node:path'
 import uni from '@dcloudio/vite-plugin-uni'
 import UniPages from '@uni-helper/vite-plugin-uni-pages'
 import AutoImport from 'unplugin-auto-import/vite'
+import vitePluginDirectives from './src/vite-plugin/vite-plugin-directives'
 
 export default defineConfig({
   plugins: [
+    vitePluginDirectives({
+      directives: 'v-perms' // 自定义指令名称（默认：v-perms）
+    }),
     UniPages({
       exclude: ['**/components/**/**.*'], // 排除的文件
       routeBlockLang: 'json5', // 虽然设了默认值，但是vue文件还是要加上 lang="json5", 这样才能很好地格式化

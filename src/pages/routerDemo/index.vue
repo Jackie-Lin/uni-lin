@@ -7,9 +7,12 @@
 </route>
 
 <template>
+  <div>--------页面权限----------</div>
   <button @click="goToPage1">['vip']</button>
   <button @click="goToPage2">['vip', 'admin']</button>
   <button @click="goToPage3">['logined']</button>
+  <div>--------按钮权限----------</div>
+  <button v-perms="['operation:user:delete']">按钮权限: operation:user:delete</button>
 </template>
 
 <script setup lang="ts">

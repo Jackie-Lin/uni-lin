@@ -1,4 +1,5 @@
 import { pages, subPackages } from '@/pages.json'
+import { useUserStore } from '@/store'
 
 /**
  * 根据路由路径，获取页面权限 permissionKeys: ['isNeedLogin', 'isVip', 'admin']
@@ -71,4 +72,12 @@ export const redirectRouteTo = () => {
   } else {
     return false
   }
+}
+
+/* 自定义指令 按钮权限控制 */
+export const checkBtnPermission = (btnPermissions: string[]) => {
+  const store = useUserStore() // 放函数内是为了保证，每次调用都获取最新的用户权限
+  const userBtnPermissions = store.getUserBtnPermission // 用户已有按钮权限
+  const intersectionPermissions = btnPermissions.filter(item => userBtnPermissions.includes(item)) // 用户已有按钮权限与当前按钮权限的交集
+  return !!(intersectionPermissions.length === btnPermissions.length)
 }

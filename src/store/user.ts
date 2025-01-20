@@ -8,6 +8,7 @@ type UserInfo = {
   accessToken?: string
   refreshToken?: string
   isVip?: boolean
+  userBtnPermission?: string[]
 }
 
 // 初始用户数据，可用户初始化
@@ -17,7 +18,8 @@ const initState = {
   avatar: '',
   accessToken: '',
   refreshToken: '',
-  isVip: true
+  isVip: true,
+  userBtnPermission: ['operation:user:create', 'operation:user:update', 'operation:user:delete']
   // ...
 }
 
@@ -37,7 +39,7 @@ export const useUserStore = defineStore(
       userInfo.value = { ...initState }
     }
 
-    // 获取权限信息
+    // 获取页面权限信息
     const getUserPermissionKeys = computed(() => {
       const permissionKeys: string[] = []
       // 是登录
@@ -52,11 +54,17 @@ export const useUserStore = defineStore(
       return permissionKeys
     })
 
+    // 获取用户按钮权限
+    const getUserBtnPermission = computed(() => {
+      return userInfo.value.userBtnPermission
+    })
+
     return {
       userInfo,
       setUserInfo,
       clearUserInfo,
-      getUserPermissionKeys
+      getUserPermissionKeys,
+      getUserBtnPermission
     }
   },
   {

@@ -31,7 +31,7 @@ const dataList = ref([])
 const queryList = (pageNo, pageSize) => {
   // 这里的pageNo和pageSize会自动计算好，直接传给服务器即可
   // 这里的请求只是演示，请替换成自己的项目的网络请求，并在网络请求回调中通过paging.value.complete(请求回来的数组)将请求结果传给z-paging
-  getUserListApi({ _page: pageNo, _limit: pageSize }, { isBaseUrl: false })
+  getUserListApi({ _page: pageNo, _limit: pageSize })
     .then(res => {
       // 请勿在网络请求回调中给dataList赋值！！只需要调用complete就可以了
       paging.value.complete(res.data)
