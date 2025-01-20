@@ -3,8 +3,10 @@
   "cSpell.words": [
     "Attributify",
     "autofocus",
+    "autoscan",
     "commitlint",
     "conventionalcommits",
+    "easycom",
     "echart",
     "Fbase",
     "Fdemo",
@@ -20,6 +22,7 @@
     "Prefixs",
     "splashscreen",
     "tseslint",
+    "unplugin",
     "VITE"
   ],
   "GitCommitPlugin.ShowEmoji": true, // 提交是否显示 emoji 符号
@@ -60,6 +63,7 @@
     // "*.env": "$(capture).env.*",
     "CHANGELOG.md": "CHANGELOG*",
     "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,.npmrc,.browserslistrc",
+    "eslint.config.mjs": ".eslintignore,.prettierignore,.stylelintignore,commitlint.*,prettier.*,stylelint.*",
     ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*,.eslintrc-auto-import.json,.editorconfig,.commitlint.config.mjs",
     ".env": ".env.*",
   }

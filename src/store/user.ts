@@ -19,7 +19,7 @@ const initState = {
   accessToken: '',
   refreshToken: '',
   isVip: true,
-  userBtnPermission: ['operation:user:create', 'operation:user:update', 'operation:user:delete']
+  userBtnPermission: ['operation:user:create', 'operation:user:update']
   // ...
 }
 

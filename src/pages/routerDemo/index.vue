@@ -7,12 +7,13 @@
 </route>
 
 <template>
-  <div>--------页面权限----------</div>
+  <div class="w-100vw flex justify-center items-center m-y-20rpx">--------页面权限----------</div>
   <button @click="goToPage1">['vip']</button>
   <button @click="goToPage2">['vip', 'admin']</button>
   <button @click="goToPage3">['logined']</button>
-  <div>--------按钮权限----------</div>
-  <button v-perms="['operation:user:delete']">按钮权限: operation:user:delete</button>
+  <div class="w-100vw flex justify-center items-center m-y-20rpx">--------按钮权限----------</div>
+  <button v-perms="['operation:user:create']">有按钮权限: operation:user:create</button>
+  <button v-perms="['operation:user:delete']">无按钮权限: operation:user:delete</button>
 </template>
 
 <script setup lang="ts">
