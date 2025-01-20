@@ -50,9 +50,23 @@
     "mp-weixin" : {
         "appid" : "",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true,
+            "uglifyFileName" : true,
+            "swc": true
         },
-        "usingComponents" : true
+        "usingComponents" : true,
+        /* 该配置，上传时会忽略已配置的静态资源文件 */
+        "packOptions": {
+            "ignore": [
+                {
+                    "type": "folder",
+                    "value": "static/onLine"
+                }
+            ]
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true

@@ -1,10 +1,11 @@
 {
 	"pages": [
 		{
-			"path": "pages/routerDemo/index",
+			"path": "pages/layoutDemo/index",
 			"type": "home",
+			"layout": "head",
 			"style": {
-				"navigationBarTitleText": "页面路由权限控制"
+				"navigationBarTitleText": "布局 Demo"
 			}
 		},
 		{
@@ -69,6 +70,13 @@
 				"navigationBarTextStyle": "black",
 				"navigationBarBackgroundColor": "#ffffff",
 				"backgroundColor": "#ffffff"
+			}
+		},
+		{
+			"path": "pages/routerDemo/index",
+			"type": "page",
+			"style": {
+				"navigationBarTitleText": "页面路由权限控制"
 			}
 		},
 		{

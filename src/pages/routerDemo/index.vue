@@ -1,4 +1,4 @@
-<route lang="json5" type="home">
+<route lang="json5" type="page">
 {
   style: {
     navigationBarTitleText: '页面路由权限控制'

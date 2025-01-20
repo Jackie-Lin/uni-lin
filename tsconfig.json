@@ -15,12 +15,7 @@
     },
     "outDir": "dist",
     "lib": ["esnext", "dom"],
-    "types": [
-      "@dcloudio/types",
-      "@uni-helper/uni-types",
-      "@types/wechat-miniprogram"
-      // "wot-design-uni/global.d.ts"
-    ]
+    "types": ["@dcloudio/types", "@uni-helper/uni-types", "@types/wechat-miniprogram", "wot-design-uni/global"]
   },
   "vueCompilerOptions": {
     "plugins": ["@uni-helper/uni-types/volar-plugin"]
